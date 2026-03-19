@@ -1,0 +1,316 @@
+/* ═══ Cards — Clean White & Yellow Theme ═══ */
+
+/* Base Card */
+.card {
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  background: var(--white);
+  border: var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card--gold {
+  border-bottom: 4px solid var(--yellow);
+}
+
+.card--red {
+  border-left: 5px solid var(--red-accent);
+  border-bottom: none;
+}
+
+/* Dark sections override */
+.bg-dark .card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: none;
+  color: var(--white);
+}
+
+.bg-dark .card:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: var(--yellow);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  transform: translateY(-10px);
+}
+
+.bg-dark .card--gold {
+  border-bottom: 4px solid transparent;
+}
+
+.bg-dark .card--gold:hover {
+  border-bottom-color: var(--yellow);
+}
+
+.bg-dark .card--red {
+  border-color: rgba(211, 47, 47, 0.5);
+  background: rgba(211, 47, 47, 0.08);
+}
+
+/* Cream sections */
+.bg-cream .card {
+  background: var(--white);
+  border-color: rgba(0, 0, 0, 0.08);
+  color: var(--charcoal);
+}
+
+/* ═══ Stats Grid ═══ */
+.stats-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 3.5rem 2rem;
+  text-align: center;
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: var(--radius-xl);
+  transition: var(--transition-slow);
+}
+
+.stat:hover {
+  background: rgba(255, 215, 0, 0.08);
+  border-color: var(--yellow);
+  transform: scale(1.05) translateY(-10px);
+}
+
+.stat__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.stat__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: rgba(245, 168, 0, 0.15);
+  border: 1px solid rgba(245, 168, 0, 0.3);
+  font-size: 1.6rem;
+  color: var(--yellow);
+}
+
+.stat__num {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  line-height: 1;
+  color: var(--yellow);
+  letter-spacing: -0.05em;
+}
+
+.stat__label {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  font-size: 15px;
+  font-family: var(--font-body);
+}
+
+/* ═══ Feature Cards (Why Choose Us) ═══ */
+.feature-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.icon-card {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+  min-height: 170px;
+  padding: 32px 24px;
+  border-bottom: 4px solid transparent;
+}
+
+.icon-card:hover {
+  border-bottom-color: var(--yellow);
+  box-shadow: var(--shadow-yellow);
+  transform: translateY(-8px);
+}
+
+.icon-card:hover .icon-card__icon {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+}
+
+.icon-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--yellow-pale);
+  border: 2px solid rgba(245, 168, 0, 0.2);
+  font-size: 1.5rem;
+  color: var(--yellow-deep);
+  transition: var(--transition);
+}
+
+/* Dark section icon overrides */
+.bg-dark .icon-card__icon {
+  background: rgba(245, 168, 0, 0.14);
+  border-color: rgba(245, 168, 0, 0.28);
+  color: var(--yellow);
+}
+
+.bg-dark .icon-card:hover .icon-card__icon {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.icon-card__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 17px;
+  color: var(--black);
+}
+
+.bg-dark .icon-card__title {
+  color: var(--white);
+}
+
+.icon-card__desc {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.bg-dark .icon-card__desc {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* ═══ Faculty Cards ═══ */
+.faculty-grid {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.faculty-card-mini {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2.5rem;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(245, 168, 0, 0.25);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--radius-xl);
+  backdrop-filter: blur(12px);
+}
+
+.faculty-card-mini::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--yellow);
+  opacity: 0.06;
+}
+
+.faculty-card-mini:hover {
+  border-color: var(--yellow);
+  box-shadow: var(--shadow-yellow);
+  transform: translateY(-8px);
+}
+
+.faculty-card-mini .faculty-card__img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--yellow);
+  box-shadow: 0 0 0 10px rgba(245, 168, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.faculty-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.faculty-card-mini .faculty-card__name {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.65rem;
+  color: var(--white);
+  line-height: 1.2;
+}
+
+.bg-dark .faculty-card-mini .faculty-card__name {
+  color: var(--white);
+}
+
+.faculty-card-mini .faculty-card__meta {
+  margin: 0.25rem 0 0;
+  color: var(--yellow-deep);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.bg-dark .faculty-card__meta {
+  color: var(--yellow);
+}
+
+/* ═══ Chips / Tags ═══ */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.chip {
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--yellow-pale);
+  font-weight: 600;
+  font-size: 12px;
+  font-family: var(--font-heading);
+  color: var(--charcoal);
+}
+
+.bg-dark .chip {
+  background: rgba(255, 213, 0, 0.15);
+  border-color: rgba(255, 213, 0, 0.4);
+  color: var(--yellow-light);
+}
+
+/* ═══ Course Cards ═══ */
+.course-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* ═══ Tilt Effect ═══ */
+.tilt {
+  will-change: transform;
+  transform-style: preserve-3d;
+}
+
+.tilt .chip,
+.tilt .icon-card__icon {
+  transform: translateZ(18px);
+}

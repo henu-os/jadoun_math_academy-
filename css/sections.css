@@ -1,0 +1,299 @@
+/* ═══ Section Layouts — Clean White & Yellow ═══ */
+.section__head {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 3.5rem;
+}
+
+.section__kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--yellow-deep);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: var(--yellow-pale);
+  padding: 0;
+  width: fit-content;
+}
+
+.section__kicker::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  background: var(--yellow-deep);
+}
+
+.bg-dark .section__kicker {
+  background: rgba(245, 168, 0, 0.12);
+  border-color: rgba(245, 168, 0, 0.4);
+  color: var(--yellow);
+}
+
+.section__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  color: var(--black);
+}
+
+.bg-dark .section__title {
+  color: var(--white);
+}
+
+.section__desc {
+  max-width: 70ch;
+  color: var(--text-body);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.bg-cream .section__desc {
+  color: rgba(10, 10, 10, 0.74);
+}
+
+.bg-dark .section__desc {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* ═══ Split Layout ═══ */
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+/* ═══ Problem vs Solution — Cream BG ═══ */
+.bg-cream .card--red {
+  background: var(--white);
+  border: 1px solid rgba(229, 57, 53, 0.15);
+  border-top: 6px solid var(--red-accent);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(229, 57, 53, 0.05);
+  transition: var(--transition);
+}
+
+.bg-cream .card--red:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(229, 57, 53, 0.1);
+}
+
+.bg-cream .card--gold {
+  background: var(--white);
+  border: 1px solid rgba(245, 168, 0, 0.15);
+  border-top: 6px solid var(--yellow-deep);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 40px rgba(245, 168, 0, 0.05);
+  transition: var(--transition);
+}
+
+.bg-cream .card--gold:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px rgba(245, 168, 0, 0.1);
+}
+
+/* ═══ Pulsing Admission Banner ═══ */
+.pulsing-banner {
+  display: grid;
+  place-items: center;
+  margin-top: 1.5rem;
+  padding: 14px 40px;
+  border-radius: var(--radius-pill);
+  background: var(--black);
+  color: var(--yellow);
+  border: 2px solid var(--yellow);
+  box-shadow: var(--shadow-yellow);
+  animation: admissionPulse 2.2s ease-in-out infinite;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+@keyframes admissionPulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(245, 168, 0, 0.2); }
+  50% { box-shadow: 0 0 30px rgba(245, 168, 0, 0.5); }
+}
+
+/* ═══ Board Marquee ═══ */
+.board-marquee {
+  margin-top: 1.5rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: var(--off-white);
+}
+
+.board-marquee__track {
+  display: flex;
+  gap: 0.75rem;
+  width: max-content;
+  padding: 0.85rem 0.9rem;
+  animation: marquee 18s linear infinite;
+}
+
+.board-pill {
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  border: 2px solid var(--black);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  white-space: nowrap;
+  color: var(--charcoal);
+}
+
+/* ═══ YouTube Grid ═══ */
+.yt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.ratio-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  background: var(--off-white);
+  box-shadow: var(--shadow-sm);
+}
+
+.ratio-16x9 iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ═══ CTA Banner ═══ */
+.cta-banner {
+  background: linear-gradient(135deg, var(--yellow-deep) 0%, var(--yellow) 100%);
+  color: var(--black);
+  border-radius: var(--radius-xl);
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: var(--shadow-yellow);
+  overflow: hidden;
+  position: relative;
+}
+
+.cta-banner::after {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.35), transparent 55%);
+  transform: rotate(18deg);
+  pointer-events: none;
+}
+
+.cta-banner__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.cta-banner__title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  margin: 0;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  color: var(--black);
+}
+
+.cta-banner__desc {
+  margin: 0.35rem 0 0;
+  font-weight: 700;
+  color: var(--charcoal);
+}
+
+.cta-banner__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.75rem;
+}
+
+.cta-banner .btn--outline {
+  border-color: var(--black);
+  color: var(--black);
+}
+
+.cta-banner .btn--outline:hover {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.cta-banner .btn--gold {
+  background: var(--black);
+  color: var(--yellow);
+}
+
+.cta-banner .btn--gold:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+/* ═══ Faculty Cards ═══ */
+.faculty-card {
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.faculty-card__inner {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+}
+
+.faculty-card__img {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+.faculty-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.faculty-card__content {
+  padding: 2.5rem;
+}
+
+.faculty-card__quote {
+  margin: 1.25rem 0 0;
+  color: var(--text-body);
+  font-weight: 600;
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  border-left: 4px solid var(--yellow-deep);
+  padding-left: 1.25rem;
+}
+
+@media (max-width: 900px) {
+  .faculty-card__inner {
+    grid-template-columns: 1fr;
+  }
+  
+  .faculty-card__img {
+    height: 320px;
+    min-height: auto;
+  }
+  
+  .faculty-card__content {
+    padding: 1.5rem;
+  }
+}

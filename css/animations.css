@@ -1,0 +1,162 @@
+/* ═══ Keyframes ═══ */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(245, 168, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(245, 168, 0, 0.8);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(25%);
+  }
+  100% {
+    transform: translateX(-60%);
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes boltPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(245, 168, 0, 0.3);
+  }
+  50% {
+    transform: scale(1.2);
+    box-shadow: 0 0 30px rgba(245, 168, 0, 0.6);
+  }
+}
+
+/* ═══ Scroll Reveal (data-animate) ═══ */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+[data-animate].animate {
+  opacity: 1;
+  transform: none;
+}
+
+[data-animate="fadeInUp"].animate {
+  animation: fadeInUp 0.75s ease both;
+}
+
+[data-animate="slideInLeft"].animate {
+  animation: slideInLeft 0.8s ease both;
+}
+
+[data-animate="slideInRight"].animate {
+  animation: slideInRight 0.8s ease both;
+}
+
+/* ═══ New Scroll Reveal Classes ═══ */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.from-bottom {
+  transform: translateY(50px);
+}
+
+.reveal.from-left {
+  transform: translateX(-60px);
+}
+
+.reveal.from-right {
+  transform: translateX(60px);
+}
+
+.reveal.scale-in {
+  transform: scale(0.85);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Staggered delays for card grids */
+.reveal-stagger .reveal:nth-child(1) { transition-delay: 0.1s; }
+.reveal-stagger .reveal:nth-child(2) { transition-delay: 0.2s; }
+.reveal-stagger .reveal:nth-child(3) { transition-delay: 0.3s; }
+.reveal-stagger .reveal:nth-child(4) { transition-delay: 0.4s; }
+.reveal-stagger .reveal:nth-child(5) { transition-delay: 0.5s; }
+.reveal-stagger .reveal:nth-child(6) { transition-delay: 0.6s; }
+
+/* ═══ Slide In Toast ═══ */
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

@@ -1,0 +1,461 @@
+/* Jadoun Maths Academy — Global styles, reset, variables */
+/* ═══ NEW DESIGN SYSTEM: Clean White & Yellow Modern ═══ */
+:root {
+  /* Core Colors — Refined Premium Palette */
+  --white: #FFFFFF;
+  --off-white: #F8F9FA;
+  --cream: #FFFDF4;
+  --black: #050505;
+  --charcoal: #121212;
+  --dark-gray: #333333;
+  --text-body: #4F4F4F;
+  --text-muted: #8E8E93;
+
+  /* Brand Accent Colors — Vibrant Yellow & Gold */
+  --yellow: #FFD700;
+  --yellow-deep: #F5A800;
+  --yellow-light: #FFF4B0;
+  --yellow-pale: #FFFBEC;
+  --black-accent: #0F0F0F;
+  --red-accent: #E53935;
+  
+  /* Gradients */
+  --gradient-gold: linear-gradient(135deg, #F5A800 0%, #FFD700 100%);
+  --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #050505 100%);
+  --gradient-soft: linear-gradient(180deg, #FFFFFF 0%, #F8F9FA 100%);
+  --gradient-glass: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+
+  /* UI Effects — Premium Elevation */
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+  --shadow-yellow: 0 10px 40px rgba(245, 168, 0, 0.3);
+  --shadow-yellow-hover: 0 14px 50px rgba(245, 168, 0, 0.5);
+  --shadow-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+
+  /* Borders & Radius */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-pill: 500px;
+  --border-glass: 1px solid rgba(255, 255, 255, 0.18);
+  --border-light: 1px solid rgba(0, 0, 0, 0.06);
+
+  /* Typography */
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-hindi: 'Noto Sans Devanagari', sans-serif;
+
+  /* Spacing */
+  --section-py: clamp(4rem, 8vw, 7.5rem);
+  --section-py-sm: clamp(3rem, 5vw, 4.5rem);
+
+  /* Transitions — High Quality Easing */
+  --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-blur: blur(12px);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-body);
+  background: var(--white);
+  overflow-x: hidden;
+  width: 100%;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* ═══ Typography ═══ */
+.h1,
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.1;
+  color: var(--black);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.h2,
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--black);
+  margin: 0 0 1rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+  color: var(--black);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--black);
+  margin: 0;
+}
+
+p {
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--text-body);
+  line-height: 1.8;
+  letter-spacing: -0.005em;
+}
+
+/* ═══ Utility Classes ═══ */
+.container {
+  width: min(1200px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section--tight {
+  padding: clamp(2.25rem, 4vw, 4rem) 0;
+}
+
+.bg-cream {
+  background: var(--cream);
+  color: var(--black);
+}
+
+.bg-dark {
+  background: var(--black);
+  color: var(--white);
+}
+
+.bg-off-white {
+  background: var(--off-white);
+}
+
+.muted {
+  color: var(--text-muted);
+}
+
+.gold {
+  color: var(--yellow-deep);
+}
+
+.text-yellow {
+  color: var(--yellow-deep);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #F5A800, #FFD700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hindi-text {
+  font-family: var(--font-hindi);
+  font-weight: 600;
+  color: var(--charcoal);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 6px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--yellow-pale);
+  border: 2px solid var(--yellow);
+  color: var(--yellow-deep);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.lead {
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  color: var(--text-body);
+}
+
+.hindi {
+  font-family: var(--font-hindi);
+}
+
+.glass {
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: var(--shadow-md);
+  border-radius: var(--radius-lg);
+}
+
+/* ═══ Buttons ═══ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.9rem 1.1rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: var(--transition);
+  min-height: 44px;
+  white-space: nowrap;
+  user-select: none;
+  font-family: var(--font-heading);
+  font-weight: 700;
+}
+
+.btn--gold {
+  background: var(--yellow);
+  color: var(--black);
+  box-shadow: var(--shadow-yellow);
+  font-weight: 800;
+  border: none;
+}
+
+.btn--gold:hover {
+  background: var(--yellow-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-yellow-hover);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2.5px solid var(--black);
+  color: var(--black);
+  font-weight: 700;
+}
+
+.btn--outline:hover {
+  background: var(--black);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+/* Dark section variants */
+.bg-dark .btn--outline {
+  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--white);
+}
+
+.bg-dark .btn--outline:hover {
+  border-color: var(--yellow);
+  background: var(--yellow);
+  color: var(--black);
+}
+
+/* ═══ Grid ═══ */
+.grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+/* ═══ Accessibility ═══ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(245, 168, 0, 0.4), transparent);
+  margin: 1.5rem 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0.75rem;
+  background: var(--yellow);
+  color: var(--black);
+  padding: 0.65rem 0.9rem;
+  border-radius: 10px;
+  z-index: 9999;
+  font-weight: 800;
+}
+
+.skip-link:focus {
+  left: 0.75rem;
+  outline: 2px solid var(--yellow-deep);
+  outline-offset: 2px;
+}
+
+/* ═══ Floating WhatsApp Button ═══ */
+.float-wa {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 3000;
+  display: grid;
+  gap: 0.75rem;
+  justify-items: end;
+}
+
+.wa-tip {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: var(--transition);
+  pointer-events: none;
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-pill);
+  background: var(--white);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--charcoal);
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  box-shadow: var(--shadow-md);
+}
+
+.wa-tip.is-show {
+  opacity: 1;
+  transform: none;
+}
+
+.wa-btn {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #25D366;
+  color: var(--white);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+  border: none;
+  position: relative;
+  font-size: 1.55rem;
+}
+
+.wa-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: wpPulse 2s ease-out infinite;
+}
+
+.wa-btn::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid rgba(37, 211, 102, 0.35);
+  animation: waPulse 1.6s ease-out infinite;
+}
+
+@keyframes wpPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+
+  70% {
+    box-shadow: 0 0 0 16px rgba(37, 211, 102, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@keyframes waPulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.9;
+  }
+
+  100% {
+    transform: scale(1.25);
+    opacity: 0;
+  }
+}
+
+/* ═══ Scroll To Top ═══ */
+.scrolltop {
+  position: fixed;
+  left: 1rem;
+  bottom: 1rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: var(--yellow);
+  color: var(--black);
+  display: grid;
+  place-items: center;
+  z-index: 3000;
+  box-shadow: var(--shadow-yellow);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition: var(--transition);
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.scrolltop:hover {
+  background: var(--yellow-deep);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-yellow-hover);
+}
+
+.scrolltop.is-show {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
