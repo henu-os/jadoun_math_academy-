@@ -5,9 +5,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
-    content="Jadoun Maths Academy — Best Maths, Physics, Chemistry coaching in Gwalior for Class XI, XII, IIT-JEE, NEET, NDA. 25+ years experience. Call +91 84353 73222" />
+    content="Jadoun Maths Academy — Best Maths, Physics, Chemistry coaching in Gwalior for Class XI, XII, IIT-JEE, NDA. 25+ years experience. Call +91 84353 73222" />
   <meta name="keywords"
-    content="maths coaching Gwalior, IIT JEE coaching Gwalior, NEET coaching Gwalior, NDA coaching Gwalior, physics tuition Gwalior, class 11 12 tuition, Jadoun Maths Academy, Ashok Jadoun, CBSE coaching Gwalior" />
+    content="maths coaching Gwalior, IIT JEE coaching Gwalior coaching Gwalior, NDA coaching Gwalior, physics tuition Gwalior, class 11 12 tuition, Jadoun Maths Academy, Ashok Jadoun, CBSE coaching Gwalior" />
   <meta property="og:title" content="Jadoun Maths Academy — Gwalior" />
   <meta property="og:description" content="Don't Memorize, Gain Mastery!" />
   <meta property="og:image" content="images/logo.png" />
@@ -34,43 +34,46 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="site-header">
-    <div class="announce" data-announce>
-      <div class="container announce__inner">
-        <div class="announce__text">
-          🎓 Admissions Open 2026 — XI | XII | IIT-JEE | NEET | NDA | Call: +91 84353 73222
-        </div>
-        <button class="announce__btn" type="button" aria-label="Close announcement" data-announce-close>✕</button>
+  <!-- Announcement Bar -->
+  <div class="announce" data-announce>
+    <div class="container announce__inner">
+      <div class="announce__text">
+        🎓 Admissions Open 2026 — XI | XII | IIT-JEE | NDA | Call: +91 84353 73222
+      </div>
+      <button class="announce__btn" type="button" aria-label="Close announcement" data-announce-close>✕</button>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header class="nav" data-navbar>
+    <div class="container nav__inner">
+      <a class="brand" href="index.html" aria-label="Jadoun Maths Academy Home">
+        <img src="images/logo.png" alt="Jadoun Maths Academy logo" loading="lazy" />
+        <span class="brand__fallback" aria-hidden="true"></span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="index.html" data-navlink>Home</a>
+        <a href="about.html" data-navlink aria-current="page">About</a>
+        <a href="faculty.html" data-navlink>Faculty</a>
+        <a href="subjects.html" data-navlink>Subjects</a>
+        <a href="courses.html" data-navlink>Courses</a>
+        <a href="gallery.html" data-navlink>Gallery</a>
+        <a href="testimonials.html" data-navlink>Reviews</a>
+        <a href="contact.html" data-navlink>Contact</a>
+      </nav>
+
+      <div class="nav__cta">
+        <a class="btn btn--outline" href="tel:+918435373222" aria-label="Call now">
+          <i class="fa-solid fa-phone"></i> Call Now
+        </a>
+        <a class="btn btn--gold" href="admissions.html">
+          <i class="fa-solid fa-graduation-cap"></i> Join Now
+        </a>
+        <button class="nav__hamburger" type="button" aria-label="Open menu" data-menu-open>☰</button>
       </div>
     </div>
-    <header class="nav" data-navbar>
-      <div class="container nav__inner">
-        <a class="brand" href="index.html" aria-label="Jadoun Maths Academy Home">
-          <img src="images/logo.png" alt="Jadoun Maths Academy logo" />
-          <span class="brand__fallback" aria-hidden="true"></span>
-        </a>
-        <nav class="nav__links" aria-label="Primary">
-          <a href="index.html" data-navlink>Home</a>
-          <a href="about.html" data-navlink aria-current="page">About</a>
-          <a href="faculty.html" data-navlink>Faculty</a>
-          <a href="subjects.html" data-navlink>Subjects</a>
-          <a href="courses.html" data-navlink>Courses</a>
-          <a href="gallery.html" data-navlink>Gallery</a>
-          <a href="testimonials.html" data-navlink>Reviews</a>
-          <a href="contact.html" data-navlink>Contact</a>
-        </nav>
-        <div class="nav__cta">
-          <a class="btn btn--outline" href="tel:+918435373222" aria-label="Call now">
-            <i class="fa-solid fa-phone"></i> Call Now
-          </a>
-          <a class="btn btn--gold" href="admissions.html">
-            <i class="fa-solid fa-graduation-cap"></i> Join Now
-          </a>
-          <button class="nav__hamburger" type="button" aria-label="Open menu" data-menu-open>☰</button>
-        </div>
-      </div>
-    </header>
-  </div>
+  </header>
 
   <!-- Mobile Menu Overlay -->
   <div class="menu" data-menu aria-hidden="true">
@@ -102,10 +105,9 @@
           <div class="section__kicker">Our Story</div>
           <h1 class="section__title h1" style="font-size: clamp(2rem, 3.2vw, 3rem)">About Jadoun Maths Academy</h1>
           <p class="section__desc">
-            We’re a coaching institute in Gwalior focused on one thing: <strong>mastery through concepts</strong>.
-            Whether you’re in
-            Class XI–XII or preparing for IIT-JEE, NEET, or NDA, our goal is to make learning logical, structured, and
-            confident.
+            We're a coaching institute in Gwalior focused on one thing: <strong>mastery through concepts</strong>.
+            Whether you're in Class XI–XII or preparing for IIT-JEE, or NDA, our goal is to make learning logical,
+            structured, and confident.
           </p>
         </div>
 
@@ -113,17 +115,15 @@
           <div class="card card--gold" data-animate="fadeInUp">
             <h2 class="h2" style="font-size: 1.35rem">Mission</h2>
             <p style="margin: 0; color: var(--text-body)">
-              “Don’t Memorize, Gain Mastery!” We build fundamentals, sharpen problem-solving, and train students to
-              perform under
-              exam pressure.
+              "Don't Memorize, Gain Mastery!" We build fundamentals, sharpen problem-solving, and train students to
+              perform under exam pressure.
             </p>
           </div>
           <div class="card card--gold" data-animate="fadeInUp">
             <h2 class="h2" style="font-size: 1.35rem">Vision</h2>
             <p style="margin: 0; color: var(--text-body)">
               Create a learning culture where Maths and Science become strengths through clarity, practice, and
-              consistent
-              mentorship.
+              consistent mentorship.
             </p>
           </div>
         </div>
@@ -138,7 +138,7 @@
       <div class="container">
         <div class="section__head">
           <div class="section__kicker">25+ Years Journey</div>
-          <h2 class="section__title h2">A Timeline of Learning & Results</h2>
+          <h2 class="section__title h2">A Timeline of Learning &amp; Results</h2>
           <p class="section__desc">A simple view of how we build mastery step-by-step.</p>
         </div>
 
@@ -162,7 +162,7 @@
             style="background: rgba(10, 10, 10, 0.04); border-color: rgba(10, 10, 10, 0.12)">
             <h3 class="h3" style="color: var(--black); margin-bottom: 0.5rem">3. The Result</h3>
             <p style="margin: 0; color: var(--text-body)">
-              Consistent doubt clearing and mock tests lead to mastery in boards and competitive examinations like JEE &
+              Consistent doubt clearing and mock tests lead to mastery in boards and competitive examinations like JEE &amp;
               NDA.
             </p>
           </div>
@@ -171,6 +171,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer">
     <div class="container footer__inner">
       <div class="footer__grid">
@@ -183,28 +184,83 @@
             </div>
           </div>
           <p class="footer__text">
-            Concept-based coaching for Class XI, XII and competitive exams — IIT-JEE, NEET, NDA. Learn with clarity,
-            practice
-            smart, and master results.
+            Concept-based coaching for Class XI, XII and competitive exams — IIT-JEE, NDA. Learn with clarity,
+            practice smart, and master results.
           </p>
+          <div class="social" aria-label="Social links">
+            <a href="https://www.youtube.com/@jadounmathsacademy" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://www.instagram.com/jadoun_maths_academy/" target="_blank" rel="noreferrer"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/p/Jadoun-Maths-Academy-100082972766977/" target="_blank" rel="noreferrer"
+              aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="https://wa.me/918435373222" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp"></i>
+            </a>
+          </div>
         </div>
 
         <div>
-           <p class="footer__h">Quick Links</p>
+          <p class="footer__h">Quick Links</p>
           <div class="footer__links">
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="faculty.html">Faculty</a>
             <a href="subjects.html">Subjects</a>
+            <a href="courses.html">Courses</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="testimonials.html">Reviews</a>
+            <a href="contact.html">Contact</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__h">Courses &amp; Exams</p>
+          <div class="footer__links">
+            <a href="courses.html">Class XI</a>
+            <a href="courses.html">Class XII</a>
+            <a href="courses.html">IIT-JEE</a>
+            <a href="courses.html">NDA</a>
+            <a href="subjects.html">CBSE</a>
+            <a href="subjects.html">ICSE</a>
+            <a href="subjects.html">IGCSE</a>
+            <a href="subjects.html">ISC</a>
+            <a href="subjects.html">State Board</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__h">Contact</p>
+          <div class="footer__links">
+            <a href="contact.html">📍 Near Sant Krapal Ashram, S.P. Ashram, Gwalior, MP</a>
+            <a href="tel:+918435373222">📞 +91 84353 73222</a>
+            <span style="color: rgba(255, 255, 255, 0.78); font-weight: 600">⏰ Mon–Sat: 6 AM–8 PM</span>
           </div>
         </div>
       </div>
 
-       <div class="footer__bottom">
+      <div class="footer__bottom">
+        <strong class="hindi">सीखिए हमारे साथ, क्योंकि सही एवं अनुभवी मार्गदर्शन ही बेहतर है।</strong>
         <span>© 2026 Jadoun Maths Academy. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
+
+  <!-- Floating Buttons -->
+  <div class="float-wa" aria-label="Floating actions">
+    <div class="wa-tip" data-wa-tip>Chat with Us</div>
+    <a data-whatsapp class="wa-btn" href="https://wa.me/918435373222" target="_blank" rel="noreferrer"
+      aria-label="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp" style="font-size: 2rem"></i>
+    </a>
+  </div>
+
+  <button data-scrolltop class="scrolltop" type="button" aria-label="Scroll to top">↑</button>
 
   <script src="js/main.js" defer></script>
   <script src="js/animations.js" defer></script>

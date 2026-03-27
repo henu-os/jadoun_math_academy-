@@ -1,4 +1,10 @@
 (() => {
+  // ─── CONFIGURE THIS ────────────────────────────────────────────────────────
+  // Paste your Google Apps Script Web App URL below after deploying it.
+  // See: GOOGLE_SHEET_SETUP.md for step-by-step instructions.
+  const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzidlgsV2tBMBqJ1G6YWi1EEgdhByXd_JMV3Xw_lnc3LsXXSdMzKz9paVKQTNj0hF4n/exec";
+  // ───────────────────────────────────────────────────────────────────────────
+
   const forms = Array.from(document.querySelectorAll("[data-enquiry-form]"));
   if (!forms.length) return;
 
@@ -27,7 +33,9 @@
       if (!(field instanceof HTMLElement)) return;
       const control = field.querySelector(".control");
       const val =
-        control instanceof HTMLInputElement || control instanceof HTMLSelectElement || control instanceof HTMLTextAreaElement
+        control instanceof HTMLInputElement ||
+          control instanceof HTMLSelectElement ||
+          control instanceof HTMLTextAreaElement
           ? control.value.trim()
           : "";
 
@@ -81,6 +89,15 @@
   };
 
   forms.forEach((form) => {
+    // Determine form type from nearest heading or page title
+    const formType = (() => {
+      const heading =
+        form.closest("section")?.querySelector("h1, h2, .section__kicker")?.textContent?.trim() || "";
+      if (/admission|enquiry form|start your journey/i.test(heading)) return "Admission";
+      if (/contact|quick enquiry|get in touch/i.test(heading)) return "Contact";
+      return "General";
+    })();
+
     form.addEventListener("input", (e) => {
       const t = e.target;
       if (!(t instanceof HTMLElement)) return;
@@ -101,22 +118,37 @@
       setLoading(form, true);
       showStatus(form, "Submitting your enquiry…", true);
 
-      // If user configured Formspree action, try POST; otherwise fallback to mailto
-      const action = form.getAttribute("action") || "";
-      const hasFormspree = /formspree\.io\/f\//i.test(action);
-
       const fd = new FormData(form);
       const payload = Object.fromEntries(fd.entries());
 
+      // Add metadata
+      payload["Form Type"] = formType;
+      payload["Submitted At"] = new Date().toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        dateStyle: "medium",
+        timeStyle: "short",
+      });
+      payload["Page"] = window.location.pathname.split("/").pop() || "index.html";
+
+      const hasScriptURL =
+        GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_SCRIPT_URL_HERE";
+
       try {
-        if (hasFormspree) {
-          const res = await fetch(action, {
+        if (hasScriptURL) {
+          // ── Google Sheets via Apps Script ─────────────────────────────────
+          // Using no-cors mode: Apps Script returns opaque response, which is fine.
+          // We treat any non-network-error as success.
+          await fetch(GOOGLE_SCRIPT_URL, {
             method: "POST",
-            headers: { Accept: "application/json" },
-            body: fd,
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
           });
-          if (!res.ok) throw new Error("Request failed");
+
+          form.reset();
+          showStatus(form, "✅ Thank you! We'll contact you within 24 hours.", true);
         } else {
+          // ── Fallback: mailto ───────────────────────────────────────────────
           const subject = encodeURIComponent("Jadoun Maths Academy — Admission Enquiry");
           const body = encodeURIComponent(
             Object.entries(payload)
@@ -124,10 +156,9 @@
               .join("\n")
           );
           window.location.href = `mailto:jadounmathsacademy@gmail.com?subject=${subject}&body=${body}`;
+          form.reset();
+          showStatus(form, "✅ Thank you! We'll contact you within 24 hours.", true);
         }
-
-        form.reset();
-        showStatus(form, "✅ Thank you! We'll contact you within 24 hours.", true);
       } catch {
         showStatus(form, "Something went wrong. Please call +91 84353 73222 or try again.", false);
       } finally {
@@ -136,4 +167,3 @@
     });
   });
 })();
-
