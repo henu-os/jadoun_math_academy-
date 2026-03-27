@@ -1,132 +1,186 @@
-.hero-slider {
-  position: relative;
+/* ═══ HERO — Clean Left Content + Geometric Right Shape ═══ */
+
+.hero-new {
   background: var(--white);
-  padding-top: 105px; /* Reduced to pull the banner closer to the navbar */
-  overflow: hidden;
-}
-
-.hero-swiper {
-  width: 100%;
-  height: auto;
   position: relative;
+  overflow: hidden;
+  padding-top: 105px; /* navbar offset */
+  min-height: 440px;
+  display: flex;
+  flex-direction: column;
 }
 
-.banner-slide {
-  width: 100%;
+/* Subtle dot grid background */
+.hero-new::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(245,168,0,0.12) 1.2px, transparent 1.2px);
+  background-size: 26px 26px;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.banner-container {
+/* Large decorative diamond shape — right side */
+.hero-new__shape {
+  position: absolute;
+  right: -6%;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 420px;
+  height: 420px;
+  background: rgba(255, 248, 210, 0.85);
+  border-radius: 40px;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Second smaller diamond behind */
+.hero-new__shape::before {
+  content: '';
+  position: absolute;
+  inset: -60px;
+  background: rgba(255, 248, 210, 0.45);
+  border-radius: 50px;
+  z-index: -1;
+}
+
+/* ── Inner container ──────────────────────────────── */
+.hero-new__inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2rem;
+  align-items: center;
+  padding-top: 3rem;
+  padding-bottom: 0; /* Let image touch the bottom ticker */
+  min-height: 480px;
+}
+
+/* ── Content (left-aligned) ────────────────────────── */
+.hero-new__content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 640px;
+  padding-bottom: 3rem;
+}
+
+/* ── Image (right-aligned) ─────────────────────────── */
+.hero-new__visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align bottom */
+  height: 100%;
+}
+
+.hero-new__img {
   width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
-  padding: 0 1rem 1rem; /* Removed top padding */
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  object-position: bottom right;
+  z-index: 1;
+  filter: drop-shadow(0 10px 25px rgba(0,0,0,0.15));
+}
+
+/* Admissions badge */
+.hero-new__admit-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
   background: var(--white);
-}
-
-.hero-banner-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
-  object-fit: contain; /* Ensure entire graphic is visible without cropping */
-  transition: var(--transition-slow);
-}
-
-/* Premium Navigation Arrows */
-.hero-nav-btn {
-  color: var(--yellow-deep) !important;
-  transform: scale(0.65);
-  background: rgba(255, 255, 255, 0.86);
-  backdrop-filter: blur(8px);
-  width: 60px !important;
-  height: 60px !important;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: var(--transition);
-  opacity: 0;
-}
-
-.hero-slider:hover .hero-nav-btn {
-  opacity: 1;
-  transform: scale(0.85);
-}
-
-.hero-nav-btn:hover {
-  background: var(--yellow);
-  color: var(--black) !important;
-  transform: scale(0.95) !important;
-}
-
-.hero-nav-btn::after {
-  font-size: 24px !important;
-  font-weight: 900;
-}
-
-/* Pagination Dots */
-.hero-pagination .swiper-pagination-bullet {
-  background: var(--black) !important;
-  opacity: 0.2;
-  width: 10px;
-  height: 10px;
-  transition: var(--transition);
-}
-
-.hero-pagination .swiper-pagination-bullet-active {
-  background: var(--yellow-deep) !important;
-  opacity: 1;
-  width: 28px;
-  border-radius: 5px;
-}
-
-@media (max-width: 1024px) {
-  .hero-slider {
-    padding-top: 70px;
-  }
-  .banner-container {
-    padding: 0.5rem;
-  }
-  .hero-banner-img {
-    aspect-ratio: auto; /* Allow image to find its height */
-    border-radius: var(--radius-sm);
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-nav-btn {
-    display: none !important;
-  }
-  .hero-banner-img {
-    border-radius: 0;
-  }
-  .banner-container {
-    padding: 0;
-  }
-}
-
-/* ═══ Ticker ═══ */
-.ticker {
-  position: relative;
-  z-index: 20;
-  overflow: hidden;
+  border: 1.5px solid var(--yellow-deep);
   border-radius: var(--radius-pill);
+  padding: 0.35rem 1rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 11.5px;
+  color: var(--yellow-deep);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  width: fit-content;
+  box-shadow: 0 2px 12px rgba(245,168,0,0.15);
+}
+
+/* Main headline */
+.hero-new__title {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  line-height: 1.1;
+  color: var(--black);
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.hero-new__title .text-yellow {
+  color: var(--yellow-deep);
+}
+
+/* Subtitle */
+.hero-new__desc {
+  margin: 0;
+  font-size: 15px;
+  color: var(--text-body);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* Hindi quote */
+.hero-new__hindi {
+  margin: 0;
+  font-family: var(--font-hindi);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--yellow-deep);
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* ── CTA Buttons ──────────────────────────────────── */
+.hero-new__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+.hero-new__ctas .btn {
+  font-size: 15px;
+  padding: 0.85rem 1.5rem;
+  min-width: 170px;
+  justify-content: center;
+}
+
+/* ── Full-width Ticker Bar ────────────────────────── */
+.hero-new__bar {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+}
+
+.ticker {
+  overflow: hidden;
   background: var(--black);
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  box-shadow: var(--shadow-lg);
+  border-top: 1px solid rgba(255, 215, 0, 0.15);
   width: 100%;
 }
 
 .ticker__track {
   display: flex;
-  gap: 2rem;
-  padding: 12px 1rem;
+  gap: 3rem;
+  padding: 11px 1.5rem;
   width: max-content;
-  animation: ticker-scroll 22s linear infinite;
+  animation: ticker-scroll 30s linear infinite;
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--yellow);
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
 }
 
 .ticker__item {
@@ -134,10 +188,75 @@
 }
 
 @keyframes ticker-scroll {
-  from {
-    transform: translateX(0);
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ═══ Responsive ═══ */
+@media (max-width: 1024px) {
+  .hero-new {
+    padding-top: 80px;
   }
-  to {
-    transform: translateX(-33.33%);
+
+  .hero-new__shape {
+    width: 340px;
+    height: 340px;
+    right: -10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-new {
+    padding-top: 70px;
+  }
+
+  .hero-new__inner {
+    grid-template-columns: 1fr;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    min-height: auto;
+  }
+
+  .hero-new__shape {
+    width: 240px;
+    height: 240px;
+    right: -18%;
+    top: 20%;
+    opacity: 0.6;
+  }
+
+  .hero-new__content {
+    gap: 0.85rem;
+    max-width: 100%;
+    padding-bottom: 1rem;
+  }
+
+  .hero-new__visual {
+    margin-top: 1rem;
+  }
+
+  .hero-new__img {
+    max-width: 320px;
+    object-position: bottom center;
+  }
+
+  .hero-new__ctas .btn {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .ticker__track {
+    font-size: 12.5px;
+    padding: 10px 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-new__title {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .hero-new__shape {
+    display: none; /* hide on very small screens for clarity */
   }
 }

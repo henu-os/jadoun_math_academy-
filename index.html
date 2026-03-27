@@ -107,44 +107,82 @@
   </div>
 
   <main id="main">
-    <section class="hero-slider">
-      <div class="swiper hero-swiper">
-        <div class="swiper-wrapper">
-          <!-- Slide 1: Main Banner -->
-          <div class="swiper-slide banner-slide">
-            <div class="banner-container">
-              <img src="images/banner_3_1_ratio_1.png"
-                alt="Jadoun Maths Academy — Build Strong Concepts, Achieve Big Results" class="hero-banner-img"
-                fetchpriority="high">
-            </div>
-            <!-- SEO Heading (Hidden but present for crawlers) -->
-            <h1 class="sr-only">Jadoun Maths Academy — Best Maths, Physics, & Chemistry Coaching in Gwalior</h1>
-          </div>
-          <!-- Slide 2: Promotional Banner 2 -->
-          <div class="swiper-slide banner-slide">
-            <div class="banner-container">
-              <img src="images/banner2.jpeg" alt="Jadoun Maths Academy — Excellence in Mathematics Starts Here!"
-                class="hero-banner-img" loading="lazy">
-            </div>
-          </div>
-        </div>
-        <div class="swiper-pagination hero-pagination"></div>
-        <div class="swiper-button-prev hero-nav-btn"></div>
-        <div class="swiper-button-next hero-nav-btn"></div>
-      </div>
+    <!-- ══ HERO ══════════════════════════════════════════════════════ -->
+    <section class="hero-new">
+      <!-- Decorative diamond shape (CSS only, right side) -->
+      <div class="hero-new__shape" aria-hidden="true"></div>
 
-      <div class="container" style="margin-top: 1rem; position: relative; z-index: 30;">
+      <div class="hero-new__inner container">
+
+        <!-- Left: Content -->
+        <div class="hero-new__content" data-animate="fadeInUp">
+
+          <!-- Admissions badge -->
+          <div class="hero-new__admit-badge">★ ADMISSIONS OPEN 2026</div>
+
+          <!-- Main Headline -->
+          <h1 class="hero-new__title">
+            Make Maths Your <span class="text-yellow">Strength,</span><br />
+            Not Your Struggle.
+          </h1>
+
+          <!-- Subtitle -->
+          <p class="hero-new__desc">
+            Concept-Based Learning for Class XI &bull; XII &bull; IIT-JEE &bull; NDA
+          </p>
+
+          <!-- Hindi Quote -->
+          <p class="hero-new__hindi hindi">
+            "सीखिए हमारे साथ, क्योंकि सही एवं अनुभवी मार्गदर्शन ही बेहतर है।"
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="hero-new__ctas">
+            <a class="btn btn--gold" href="admissions.html">
+              → <i class="fa-solid fa-graduation-cap"></i> Enroll Now
+            </a>
+            <a class="btn btn--outline" href="https://www.youtube.com/@jadounmathsacademy" target="_blank"
+              rel="noreferrer">
+              ▶ Watch Free Classes
+            </a>
+          </div>
+
+        </div><!-- /content -->
+
+        <!-- Right: Hero Image -->
+        <div class="hero-new__visual" data-animate="fadeInUp">
+          <img src="images/hero.png" alt="Ashok Jadoun — Maths Se Dar Nahi, Control Aata Hai" class="hero-new__img"
+            fetchpriority="high" />
+        </div>
+
+      </div><!-- /inner -->
+
+      <!-- Full-width ticker bar -->
+      <div class="hero-new__bar">
         <div class="ticker" aria-label="Jadoun Academy Highlights">
           <div class="ticker__track">
-            <span class="ticker__item">✦ 25+ Years of Academic Excellence</span>
-            <span class="ticker__item">✦ 10,000+ Success Stories Recorded</span>
-            <span class="ticker__item">✦ IIT-JEE Concept Specialists</span>
-            <span class="ticker__item">✦ Bilingual English/Hindi Concept Mastery</span>
-            <span class="ticker__item">✦ 4 Specialized Scientific Batch Types</span>
+            <span class="ticker__item">+ 10000+ Students</span>
+            <span class="ticker__item">+ IIT-JEE Results</span>
+            <span class="ticker__item">+ NDA Coaching</span>
+            <span class="ticker__item">+ 4 Batch Types</span>
+            <span class="ticker__item">+ 25+ Years Experience</span>
+            <span class="ticker__item">+ 10000+ Students</span>
+            <span class="ticker__item">+ IIT-JEE Results</span>
+            <span class="ticker__item">+ NDA Coaching</span>
+            <span class="ticker__item">+ 4 Batch Types</span>
+            <span class="ticker__item">+ 25+ Years Experience</span>
+            <span class="ticker__item">+ 10000+ Students</span>
+            <span class="ticker__item">+ IIT-JEE Results</span>
+            <span class="ticker__item">+ NDA Coaching</span>
+            <span class="ticker__item">+ 4 Batch Types</span>
+            <span class="ticker__item">+ 25+ Years Experience</span>
           </div>
         </div>
       </div>
+
     </section>
+    <!-- ══ /HERO ══════════════════════════════════════════════════════ -->
+
 
     <!-- STATS -->
     <section class="section section--tight bg-dark">
@@ -631,7 +669,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
   <script src="js/main.js" defer></script>
-  <script src="js/hero.js" defer></script>
   <script src="js/counter.js" defer></script>
   <script src="js/animations.js" defer></script>
   <script src="js/carousel.js" defer></script>
